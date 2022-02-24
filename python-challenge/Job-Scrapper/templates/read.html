@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+    Job Scrapper
+  </title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <header>
+    <h1><a href="/" target="_blank">Job Scrapper</a></h1>
+    <h2>{{resultsNumber}} {{searching_by}} jobs found.</h2>
+    <a href="/export?word={{searching_by}}" target="_blank" name="{{searching_by}}">Export to csv</a>
+  </header>
+  <main>
+    {% for job in jobs %}
+      <div>
+          <h3>{{job.title}}</a></h3>
+          <h4>{{job.company}}</h4>
+          <h3><a href="{{job.links}}" target="_blank">Apply</a></h3>
+        <hr />
+      </div>
+    {% endfor %}
+  </main>
+</body>
+
+</html>
